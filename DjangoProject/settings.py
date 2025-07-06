@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'DjangoProject.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://form_treino_user:h33YPdfEJjxUvhZSKxpAD3NtR6km6uNb@dpg-d1lbs4be5dus73fh8nvg-a/form_treino'
+        default='postgresql://form_treino_user:h33YPdfEJjxUvhZSKxpAD3NtR6km6uNb@dpg-d1lbs4be5dus73fh8nvg-a.oregon-postgres.render.com/form_treino'
     )
 }
 
