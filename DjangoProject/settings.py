@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-from distutils.command.config import config
+import dj_database_url
+from decouple import (config)
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -19,8 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-q5#9+=@pevat6jk^ew_nw9m7$whnco9jmhllh4(@x@f&ni2q&x'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -75,10 +75,12 @@ WSGI_APPLICATION = 'DjangoProject.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default=config('DATABASE_URL'))
+    'default': dj_database_url.config(
+        default='postgresql://form_treino_user:h33YPdfEJjxUvhZSKxpAD3NtR6km6uNb@dpg-d1lbs4be5dus73fh8nvg-a/form_treino'
+    )
 }
 
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'django-insecure-q5#9+=@pevat6jk^ew_nw9m7$whnco9jmhllh4(@x@f&ni2q&x'
 
 
 # Password validation
